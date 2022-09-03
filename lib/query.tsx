@@ -1,0 +1,44 @@
+export const HEADER = `
+query{
+  header{
+    data{
+      attributes{
+        sun{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        bg{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        mn1{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        mn2{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        mn3{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
