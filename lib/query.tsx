@@ -42,3 +42,46 @@ query{
     }
   }
 }`;
+export const ABOUT = `query{
+  about{
+   data{
+     attributes{
+       Hi{
+         data{
+           attributes{
+             formats
+           }
+         }
+       }
+       IR{
+         data{
+           attributes{
+             formats
+           }
+         }
+       }
+       Pencil{
+         data{
+           attributes{
+             formats
+           }
+         }
+       }
+       Idea{
+         data{
+           attributes{
+             formats
+           }
+         }
+       }
+       MoreProjects{
+         data{
+           attributes{
+             formats
+           }
+         }
+       }
+     }
+   }
+ }
+ }`;

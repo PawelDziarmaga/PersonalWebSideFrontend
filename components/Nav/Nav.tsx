@@ -1,7 +1,8 @@
 // import hooks
+import Link from "next/link";
 import { useState } from "react";
 // import styles
-import { Div, Ul, Li, A } from "./Nav.styles";
+import { Div, Ul, Li } from "./Nav.styles";
 
 function Nav() {
 	const [opa, useOpa] = useState(false);
@@ -19,20 +20,20 @@ function Nav() {
 		<Div onScroll={(e) => opaHendler(e)} opa={opa}>
 			<Ul>
 				<Li>
-					<A href='#Header'>Home</A>
+					<Link href='#Header'>Home</Link>
 				</Li>
 
 				<Li>
-					<A href='#About'>About</A>
+					<Link href='#About'>About</Link>
 				</Li>
 				<Li>
-					<A href='#Projects'>Projects</A>
+					<Link href='#Projects'>Projects</Link>
 				</Li>
 				<Li>
-					<A href='#Comment'>Notes</A>
+					<Link href='#Comment'>Notes</Link>
 				</Li>
 				<Li>
-					<A href='#Contact'>Contact</A>
+					<Link href='#Contact'>Contact</Link>
 				</Li>
 			</Ul>
 		</Div>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Div = styled.div<{ opa: boolean }>`
+	z-index: 5;
 	background-color: ${(props) => (props.opa ? "#eeec" : "#eee1")};
 	box-shadow: 0 0 ${(props) => (props.opa ? "15px" : "0")} grey;
 	position: fixed;
@@ -46,28 +47,28 @@ export const Ul = styled.ul`
 `;
 export const Li = styled.li`
 	list-style: none;
-`;
-export const A = styled.a`
-	text-decoration: none;
-	text-align: center;
-	font-size: 1vw;
-	color: #252525;
-	font-family: "Peralta", cursive;
-	text-shadow: 0px 0px 15px #ecdbba;
+	a {
+		text-decoration: none;
+		text-align: center;
+		font-size: 1vw;
+		color: #252525;
+		font-family: "Peralta", cursive;
+		text-shadow: 0px 0px 15px #ecdbba;
 
-	border: 1px solid #252525;
-	padding: 10px;
-	box-shadow: 2px 2px 5px #252525;
+		border: 1px solid #252525;
+		padding: 10px;
+		box-shadow: 2px 2px 5px #252525;
 
-	transition: 0.3s;
-	@media (max-width: 1000px) {
-		font-size: 2vw;
-	}
-	@media (max-width: 600px) {
-		font-size: 2.5vw;
-	}
-	@media (max-width: 400px) {
-		font-size: 3vw;
-		padding: 2vw;
+		transition: 0.3s;
+		@media (max-width: 1000px) {
+			font-size: 2vw;
+		}
+		@media (max-width: 600px) {
+			font-size: 2.5vw;
+		}
+		@media (max-width: 400px) {
+			font-size: 3vw;
+			padding: 2vw;
+		}
 	}
 `;
