@@ -32,7 +32,7 @@ export const H2 = styled.h2`
 	text-align: right;
 	font-size: 1.5vw;
 	color: #252525;
-	font-family: "Peralta", cursive;
+
 	text-shadow: 0px 0px 15px #ecdbba;
 	@media (max-width: 1000px) {
 		font-size: 2vw;

@@ -17,7 +17,7 @@ function About() {
 	if (fetching) return <p>Loading...</p>;
 	if (error) return <p>Oh no... </p>;
 	const elements = data.about.data.attributes;
-	console.log(elements.Hi.data.attributes.formats.small.url);
+
 	return (
 		<Div id='About'>
 			<HeaderBox>

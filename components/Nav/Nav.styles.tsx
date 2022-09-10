@@ -48,11 +48,12 @@ export const Ul = styled.ul`
 export const Li = styled.li`
 	list-style: none;
 	a {
+		background-color: #ffffff66;
 		text-decoration: none;
 		text-align: center;
 		font-size: 1vw;
 		color: #252525;
-		font-family: "Peralta", cursive;
+
 		text-shadow: 0px 0px 15px #ecdbba;
 
 		border: 1px solid #252525;

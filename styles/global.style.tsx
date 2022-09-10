@@ -9,14 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 body{
     margin: 0;
 	background: #f4f9f9;
+    font-family: 'Baloo 2', cursive;
 
-    --primary: #ca2a67;
     --secondary: #5590c8;
 
-    --background: #f4f9f9;
-
-    --fontGrey: #8c8c8c;
-    --fontWhite: #f4f9f9;
 }
 h2{
     font-size: 1.2 rem;
@@ -54,3 +50,7 @@ export const Div = styled.div`
 		overflow-y: hidden;
 	}
 `;
+/*
+font-family: 'Baloo 2', cursive;
+font-family: 'Caveat', cursive;
+*/
