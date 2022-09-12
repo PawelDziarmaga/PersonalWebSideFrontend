@@ -106,6 +106,7 @@ query{
         Backend
         typescript
         react
+        emailJS
         styledComponents
         redux
         localStorage

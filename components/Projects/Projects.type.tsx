@@ -16,6 +16,7 @@ export type propsType = {
 		Backend: boolean;
 		typescript: boolean;
 		react: boolean;
+		emailJS: boolean;
 		styledComponents: boolean;
 		redux: boolean;
 		localStorage: boolean;

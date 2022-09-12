@@ -18,6 +18,7 @@ function ChoosenProject(props: { data: propsType; setActive: any }) {
 		react,
 		styledComponents,
 		redux,
+		emailJS,
 		framerMotion,
 		reactHotToast,
 		Backend,
@@ -102,6 +103,7 @@ function ChoosenProject(props: { data: propsType; setActive: any }) {
 							<ul>
 								{typescript && <li>TypeScript</li>}
 								{react && <li>React</li>}
+								{emailJS && <li>EmailJS</li>}
 								{styledComponents && <li>Styled components</li>}
 								{redux && <li>Redux</li>}
 								{localStorage && <li>localStorage</li>}
