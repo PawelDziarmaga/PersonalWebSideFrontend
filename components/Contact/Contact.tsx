@@ -12,11 +12,39 @@ import {
 //mail
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+//Toasr
+import { toast } from "react-hot-toast";
 
 function Contact() {
 	const [name, setName] = useState("");
 	const [text, setText] = useState("");
 	const [mail, setMail] = useState("");
+
+	const handleMailJS = (e: any) => {
+		e.preventDefault();
+
+		emailjs
+			.sendForm(
+				process.env.NEXT_PUBLIC_SERVICE_ID as string,
+				process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+				"#contact-form",
+				process.env.NEXT_PUBLIC_PUBLIC_KEY as string
+			)
+			.then(
+				function (response) {
+					setName("");
+					setText("");
+					setMail("");
+				},
+				function (error) {
+					console.log("FAILED...", error);
+				}
+			);
+	};
+	//Create a toast
+	const notify = () => {
+		toast.success(`Mail has been sent.`, { duration: 1500 });
+	};
 
 	return (
 		<Div id='Contact'>
@@ -31,6 +59,7 @@ function Contact() {
 							type='text'
 							name='user_name'
 							placeholder='Name...'
+							value={name}
 							onChange={(e) => setName(e.target.value)}
 						/>
 					</Label>
@@ -39,6 +68,7 @@ function Contact() {
 							type='email'
 							name='user_email'
 							placeholder='Email...'
+							value={mail}
 							onChange={(e) => setMail(e.target.value)}
 						/>
 					</Label>
@@ -48,13 +78,17 @@ function Contact() {
 					<Textarea
 						name='message'
 						placeholder='How can I help you?'
+						value={text}
 						onChange={(e) => setText(e.target.value)}
 					/>
 				</Label>
 				<Button
 					type='submit'
 					value='Send'
-					onClick={(e) => e.preventDefault()}>
+					onClick={(e) => {
+						handleMailJS(e);
+						notify();
+					}}>
 					Send mail
 				</Button>
 			</Form>

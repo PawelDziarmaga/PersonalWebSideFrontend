@@ -4,10 +4,11 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../state/store";
 import { movwNote } from "../../../state/notesSlice";
+//import data from strapi
+import { useQuery } from "urql";
+import { NOTE_PAGE } from "../../../lib/query";
 // import styles
 import { DivNote, DrawingPin } from "./Note.styles";
-// import assets
-import DrawingPinImg from "../../../../assets/Comment/drawing-pin-gec8e88847_640.png";
 
 type PropsType = {
 	data: {
@@ -23,10 +24,18 @@ type PropsType = {
 };
 
 function Note(props: PropsType) {
+	//REDUX
 	const dispatch = useDispatch<AppDispatch>();
-
+	//state
 	const [positionX, setPositionX] = useState<number>(props.data.x);
 	const [positionY, setPositionY] = useState<number>(props.data.y);
+	//Fetch result from strapi
+	const [result] = useQuery({ query: NOTE_PAGE });
+	const { data, fetching, error } = result;
+	if (fetching) return <DivNote> Loading...</DivNote>;
+	if (error) return <DivNote>Oh no... </DivNote>;
+	const pinURL =
+		data.notePage.data.attributes.Pin.data.attributes.formats.small.url;
 
 	let dragStartX = props.data.x;
 	let dragStartY = props.data.y;
@@ -104,7 +113,7 @@ function Note(props: PropsType) {
 			x={positionX}
 			y={positionY}
 			rotate={props.data.rotate}>
-			<DrawingPin img={"brak"}></DrawingPin>
+			<DrawingPin img={pinURL}></DrawingPin>
 			<p className='date'>{props.data.date}</p>
 			<p className='text'>{props.data.text}</p>
 			<p className='author'>{props.data.author}</p>

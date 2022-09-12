@@ -6,6 +6,8 @@ import {
 	Img,
 	LabelText,
 } from "../AddNote.styles";
+//import react icons
+import { FaQuestionCircle } from "react-icons/fa";
 // import types
 type PropsType = {
 	text: string;
@@ -23,7 +25,7 @@ function FormText(props: PropsType) {
 					props.setText(event.target.value);
 				}}></Textarea>
 			<Tooltip>
-				<Img src={"brak"} alt='Information sign' />
+				<FaQuestionCircle />
 				<TooltipText>
 					Note must consist between 5 and 50 signs.
 				</TooltipText>

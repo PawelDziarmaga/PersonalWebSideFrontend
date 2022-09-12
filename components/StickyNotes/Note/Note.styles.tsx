@@ -53,7 +53,7 @@ export const DivNote = styled.div.attrs<PropsType, PropsType>((props) => ({
 	p {
 		font-size: 1.8vw;
 		padding: 1vw 0.5vw;
-		font-family: "Reenie Beanie";
+		font-family: "Caveat", cursive;
 		user-select: none;
 		@media (max-width: 1000px) {
 			font-size: 2.2vw;

@@ -126,3 +126,34 @@ query{
   }
 
  `;
+export const NOTE_PAGE = `
+ query{
+  notePage{
+    data{
+      attributes{
+        Pin{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        Board{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        Desk{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+} 
+`;

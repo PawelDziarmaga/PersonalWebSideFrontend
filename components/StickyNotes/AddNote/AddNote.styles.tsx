@@ -114,6 +114,9 @@ export const Tooltip = styled.div`
 		visibility: visible;
 		opacity: 1;
 	}
+	svg {
+		color: grey;
+	}
 `;
 
 export const TooltipText = styled.span`

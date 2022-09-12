@@ -51,7 +51,7 @@ export const Button = styled.button`
 	color: #252525;
 	font-size: 2vw;
 	font-weight: bold;
-	font-family: "Peralta", cursive;
+	font-family: "Baloo 2", cursive;
 	text-shadow: 0px 0px 15px #ecdbba;
 
 	font-size: 2vw;

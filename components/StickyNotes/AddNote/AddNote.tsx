@@ -12,17 +12,27 @@ import FormColor from "./FormElements/FormColor";
 // import styles
 import { Div, H1, Form, Button } from "./AddNote.styles";
 import { DivNote, DrawingPin } from "../Note/Note.styles";
-
+//import data from strapi
+import { useQuery } from "urql";
+import { NOTE_PAGE } from "../../../lib/query";
 function AddNote() {
 	//Redux
 	const dispatch = useDispatch<AppDispatch>();
+	const notesSlice = useSelector((state: RootState) => state.notesSlice);
 	//State
 	const [text, setText] = useState<string>("");
 	const [author, setAuthor] = useState<string>("");
 	const [color, setColor] = useState<string>("#F9FFA4");
-
+	//Fetch result from strapi
+	const [result] = useQuery({ query: NOTE_PAGE });
+	const { data, fetching, error } = result;
+	if (fetching) return <Div img={"brak"}> Loading...</Div>;
+	if (error) return <Div img={"brak"}>Oh no... </Div>;
+	const deskURL =
+		data.notePage.data.attributes.Desk.data.attributes.formats.small.url;
+	const pinURL =
+		data.notePage.data.attributes.Pin.data.attributes.formats.small.url;
 	//Generate unique ID
-	const notesSlice = useSelector((state: RootState) => state.notesSlice);
 	let id = 0;
 	const generateId = () => {
 		let ids: number[] = [];
@@ -75,7 +85,7 @@ function AddNote() {
 	};
 
 	return (
-		<Div className='addNote' img={"brak"}>
+		<Div className='addNote' img={deskURL}>
 			<H1>Add new note</H1>
 			<Form>
 				<FormText text={text} setText={setText} />
@@ -89,7 +99,7 @@ function AddNote() {
 				</Button>
 			</Form>
 			<DivNote color={color} position='auto'>
-				<DrawingPin img={"brak"}></DrawingPin>
+				<DrawingPin img={pinURL}></DrawingPin>
 				<p className='date'>{date}</p>
 				<p className='text'>{text}</p>
 				<p className='author'>{author}</p>

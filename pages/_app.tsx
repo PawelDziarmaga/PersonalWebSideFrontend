@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 
-//Import elements
-import Nav from "../components/Nav/Nav";
+//Import Toaster
+import { Toaster } from "react-hot-toast";
 
 //Import grapgql
 import { Provider, createClient } from "urql";
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<Provider value={client}>
 			<Component {...pageProps} />
-
+			<Toaster />
 			<GlobalStyle />
 		</Provider>
 	);

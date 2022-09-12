@@ -8,10 +8,10 @@ function Header() {
 	//Fetch result from strapi
 	const [result] = useQuery({ query: HEADER });
 	const { data, fetching, error } = result;
-	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... </p>;
+	if (fetching) return <Div>Loading...</Div>;
+	if (error) return <Div>Oh no... </Div>;
 	const elements = data.header.data.attributes;
-	console.log(elements.mn1.data.attributes.formats);
+
 	return (
 		<Div id='Header'>
 			<BackgroundIMG

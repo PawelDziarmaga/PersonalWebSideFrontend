@@ -8,36 +8,36 @@ import { Div, NotesArea, Button } from "./StickyNotes.styles";
 // import components
 import Note from "./Note/Note";
 import AddNote from "./AddNote/AddNote";
+//import data from strapi
+import { useQuery } from "urql";
+import { NOTE_PAGE } from "../../lib/query";
 
 function StickyNotes() {
 	//state
 	const [hide, setHide] = useState(false);
-	const hideAddNotePanel = () => {
-		setHide((prev) => !prev);
-	};
 	//Redux
 	let notesSlice = useSelector((state: RootState) => state.notesSlice);
+	//Fetch result from strapi
+	const [result] = useQuery({ query: NOTE_PAGE });
+	const { data, fetching, error } = result;
+	if (fetching) return <Div hide={hide} id='Comment'></Div>;
+	if (error) return <p>Oh no... </p>;
+	const boardURL =
+		data.notePage.data.attributes.Board.data.attributes.formats.small.url;
 	//Create elements
-	if (notesSlice.length > 20) {
-		notesSlice = notesSlice.slice(
-			notesSlice.length - 20,
-			notesSlice.length
-		);
+	const notesLenght = notesSlice.length;
+	if (notesLenght > 20) {
+		notesSlice = notesSlice.slice(notesLenght - 20, notesLenght);
 	}
-	let elements;
-	if (notesSlice.length === 0) {
-		elements = <div>Brak elementó</div>;
-	} else if (notesSlice.length === 1) {
-		elements = <Note key={notesSlice[0].id} data={notesSlice[0]} />;
-	} else {
-		elements = notesSlice.map((note) => <Note key={note.id} data={note} />);
-	}
+	let notes = notesSlice.length
+		? notesSlice.map((note) => <Note key={note.id} data={note} />)
+		: null;
 
 	return (
 		<Div hide={hide} id='Comment'>
 			<AddNote />
-			<NotesArea img={"brak"}>{elements}</NotesArea>
-			<Button onClick={hideAddNotePanel}>
+			<NotesArea img={boardURL}>{notes}</NotesArea>
+			<Button onClick={() => setHide((prev) => !prev)}>
 				{hide ? "<--- Hide" : "New note!"}
 			</Button>
 		</Div>

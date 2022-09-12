@@ -1,5 +1,7 @@
 // import styles
-import { Tooltip, Input, TooltipText, Img, LabelText } from "../AddNote.styles";
+import { Tooltip, Input, TooltipText, LabelText } from "../AddNote.styles";
+//import react icons
+import { FaQuestionCircle } from "react-icons/fa";
 // import types
 type PropsType = {
 	author: string;
@@ -17,7 +19,7 @@ function FormAuthor(props: PropsType) {
 					props.setAuthor(event.target.value);
 				}}></Input>
 			<Tooltip>
-				<Img src='brak' alt='Information sign' />
+				<FaQuestionCircle />
 				<TooltipText>
 					Sign must consist between 3 and 10 signs.
 				</TooltipText>
