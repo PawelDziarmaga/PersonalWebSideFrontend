@@ -1,3 +1,4 @@
+import React from "react";
 // import hooks
 import { useState } from "react";
 //Import Redux and store and action
@@ -35,7 +36,7 @@ function AddNote() {
 	//Generate unique ID
 	let id = 0;
 	const generateId = () => {
-		let ids: number[] = [];
+		const ids: number[] = [];
 		notesSlice.forEach((element: { id: number }) => {
 			ids.push(element.id);
 		});
@@ -64,7 +65,7 @@ function AddNote() {
 		now.getFullYear().toString()[2] + now.getFullYear().toString()[3];
 	const date = day + " " + month + " " + year + "r.";
 
-	const addNewNote = (e: any) => {
+	const addNewNote = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 		generateId();
 		const newElement = {

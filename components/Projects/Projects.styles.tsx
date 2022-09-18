@@ -1,4 +1,5 @@
 import styled from "styled-components";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { motion } = require("framer-motion");
 export const Container = styled.div`
 	background-color: #c98474;

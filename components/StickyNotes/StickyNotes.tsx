@@ -1,3 +1,4 @@
+import React from "react";
 //import hooks
 import { useState } from "react";
 //Import Redux and store and action
@@ -29,7 +30,7 @@ function StickyNotes() {
 	if (notesLenght > 20) {
 		notesSlice = notesSlice.slice(notesLenght - 20, notesLenght);
 	}
-	let notes = notesSlice.length
+	const notes = notesSlice.length
 		? notesSlice.map((note) => <Note key={note.id} data={note} />)
 		: null;
 

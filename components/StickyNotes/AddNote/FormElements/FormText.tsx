@@ -1,11 +1,6 @@
+import React from "react";
 // import styles
-import {
-	Tooltip,
-	Textarea,
-	TooltipText,
-	Img,
-	LabelText,
-} from "../AddNote.styles";
+import { Tooltip, Textarea, TooltipText, LabelText } from "../AddNote.styles";
 //import react icons
 import { FaQuestionCircle } from "react-icons/fa";
 // import types

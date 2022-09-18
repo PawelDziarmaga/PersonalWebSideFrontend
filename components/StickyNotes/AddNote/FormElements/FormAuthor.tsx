@@ -1,4 +1,4 @@
-// import styles
+import React from "react"; // import styles
 import { Tooltip, Input, TooltipText, LabelText } from "../AddNote.styles";
 //import react icons
 import { FaQuestionCircle } from "react-icons/fa";

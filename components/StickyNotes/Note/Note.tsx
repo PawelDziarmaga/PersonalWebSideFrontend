@@ -1,3 +1,4 @@
+import React from "react";
 // import hooks
 import { useState } from "react";
 //Import Redux and store and action
@@ -21,6 +22,12 @@ type PropsType = {
 		y: number;
 		rotate: string;
 	};
+};
+type DragType = {
+	touches: { clientX: number; clientY: number }[];
+	changedTouches: { clientX: number; clientY: number }[];
+	pageX: number;
+	pageY: number;
 };
 
 function Note(props: PropsType) {
@@ -53,8 +60,8 @@ function Note(props: PropsType) {
 
 	const dragEnd = (e: any) => {
 		//find drag end coordinates for touch and click
-		let dragEndX;
-		let dragEndY;
+		let dragEndX = 0;
+		let dragEndY = 0;
 		if (e.pageX !== undefined) {
 			dragEndX = e.pageX;
 			dragEndY = e.pageY;

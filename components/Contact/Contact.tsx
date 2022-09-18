@@ -1,3 +1,4 @@
+import React from "react";
 // import styles
 import {
 	Div,
@@ -20,7 +21,9 @@ function Contact() {
 	const [text, setText] = useState("");
 	const [mail, setMail] = useState("");
 
-	const handleMailJS = (e: any) => {
+	const handleMailJS = (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
 		e.preventDefault();
 
 		emailjs
@@ -31,7 +34,7 @@ function Contact() {
 				process.env.NEXT_PUBLIC_PUBLIC_KEY as string
 			)
 			.then(
-				function (response) {
+				function () {
 					setName("");
 					setText("");
 					setMail("");
@@ -85,7 +88,9 @@ function Contact() {
 				<Button
 					type='submit'
 					value='Send'
-					onClick={(e) => {
+					onClick={(
+						e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+					) => {
 						handleMailJS(e);
 						notify();
 					}}>

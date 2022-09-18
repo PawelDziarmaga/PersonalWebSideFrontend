@@ -1,3 +1,4 @@
+import React from "react";
 // import styles
 
 import { Element } from "./Projects.styles";

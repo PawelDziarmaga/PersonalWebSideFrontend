@@ -1,3 +1,4 @@
+import React from "react";
 // import styles
 import Link from "next/link";
 import { ProjectPage } from "./Projects.styles";
@@ -6,7 +7,10 @@ import { BsGithub } from "react-icons/bs";
 import { IoMdGlobe } from "react-icons/io";
 // iport types
 import { propsType } from "./Projects.type";
-function ChoosenProject(props: { data: propsType; setActive: any }) {
+function ChoosenProject(props: {
+	data: propsType;
+	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
 	const {
 		title,
 		tekst1,
@@ -46,7 +50,9 @@ function ChoosenProject(props: { data: propsType; setActive: any }) {
 			}}>
 			<div
 				className='container'
-				onClick={(e: any) => e.stopPropagation()}>
+				onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+					e.stopPropagation()
+				}>
 				<div className='item item-1 header'>
 					<h1>{title}</h1>
 					<span onClick={() => props.setActive(false)}>x</span>

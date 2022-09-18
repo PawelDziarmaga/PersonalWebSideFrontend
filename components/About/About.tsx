@@ -1,3 +1,4 @@
+import React from "react";
 //import data from strapi
 import { useQuery } from "urql";
 import { ABOUT } from "../../lib/query";

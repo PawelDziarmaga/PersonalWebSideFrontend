@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 //import data from strapi
 import { useQuery } from "urql";
@@ -10,6 +11,7 @@ import ChoosenProject from "./ChoosenProject";
 // iport types
 import { propsType } from "./Projects.type";
 //framermotion - animation
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { AnimatePresence } = require("framer-motion");
 function Projects() {
 	const [acive, setActive] = useState(false);
