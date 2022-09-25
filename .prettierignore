@@ -1,0 +1,21 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+# Ignore artifacts:
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+**/.git
+**/.svn
+**/.hg
+
+.eslintrc.js
+.eslintrc.json
+.next
+.prettierrc.json
+**/.json

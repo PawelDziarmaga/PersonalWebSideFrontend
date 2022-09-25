@@ -10,7 +10,7 @@ export type initialStateType = {
 	rotate: string;
 };
 
-export let noteList = [
+export const noteList = [
 	{
 		id: 1,
 		text: "You can add your own note!",
@@ -33,12 +33,12 @@ export let noteList = [
 	},
 	{
 		id: 3,
-		text: "You can move it to a place of your choice",
+		text: "You can move it!",
 		author: "Paweł",
 		date: "11 sep 22r.",
 		color: "#bbe2b0",
-		x: 80,
-		y: 70,
+		x: 70,
+		y: 60,
 		rotate: "-6deg",
 	},
 ] as initialStateType[];

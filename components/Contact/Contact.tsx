@@ -46,14 +46,14 @@ function Contact() {
 	};
 	//Create a toast
 	const notify = () => {
-		toast.success(`Mail has been sent.`, { duration: 1500 });
+		toast.success(`Mail has been sent.`, { duration: 2500 });
 	};
 
 	return (
 		<Div id='Contact'>
 			<H1>
-				If you want to ask me something, write to me, I ll be happy to
-				answer you
+				If you want to ask me about something, write to me!<br></br> I'll be happy to
+				answer you :)
 			</H1>
 			<Form id='contact-form'>
 				<Container>
