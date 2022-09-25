@@ -30,7 +30,7 @@ function About() {
 			</HeaderBox>
 			<ParagraphBoxOne>
 				<p>
-					I'm a road traffic engineer by education and I'm working
+					I&apos;m a road traffic engineer by education and I&apos;m working
 					as a road safety specialist.
 				</p>
 				<img
@@ -44,7 +44,7 @@ function About() {
 					alt=''
 				/>
 				<p>
-				But traffic engineering isn't the only thing I like to do. I'm passionate about world of information technology. I love to design and build, that is why I create websites.
+				But traffic engineering isn&apos;t the only thing I like to do. I&apos;m passionate about world of information technology. I love to design and build, that is why I create websites.
 				</p>
 			</ParagraphBoxTwo>
 

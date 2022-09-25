@@ -52,7 +52,7 @@ function Contact() {
 	return (
 		<Div id='Contact'>
 			<H1>
-				If you want to ask me about something, write to me!<br></br> I'll be happy to
+				If you want to ask me about something, write to me!<br></br> I&apos;ll be happy to
 				answer you :)
 			</H1>
 			<Form id='contact-form'>
