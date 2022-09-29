@@ -57,12 +57,14 @@ function Contact() {
 	};
 
 	const handleButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+		console.log(name.length<= 0)
 		if(name.length<= 0){
-			document.getElementsByClassName("text")[0].classList.add("errInput")
 			
+			document.getElementsByClassName("textForm")[0].classList.add("errInput")
+			console.log(document.getElementsByClassName("textForm")[0].classList)
 			return;
 		}else{
-			document.getElementsByClassName("text")[0].classList.remove("errInput")
+			document.getElementsByClassName("textForm")[0].classList.remove("errInput")
 		}
 		if(mail.length<= 0){
 			document.getElementsByClassName("email")[0].classList.add("errInput")
@@ -90,7 +92,7 @@ function Contact() {
 				<Container>
 					<Label>
 						<Input
-							className="text"
+							className="textForm"
 							type='text'
 							name='user_name'
 							placeholder='Name...'
