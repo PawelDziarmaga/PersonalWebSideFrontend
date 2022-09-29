@@ -19,7 +19,10 @@ export const H1 = styled.h1`
 		font-size: 6vw;
 	}
 `;
-export const Form = styled.form``;
+export const Form = styled.form`
+	.errInput{
+		border:2px solid red;
+	}`;
 export const Container = styled.div`
 	margin: 0 auto;
 	width: 60vw;
@@ -29,6 +32,7 @@ export const Container = styled.div`
 	@media (max-width: 800px) {
 		width: 80vw;
 	}
+
 `;
 export const Label = styled.label``;
 export const Input = styled.input`

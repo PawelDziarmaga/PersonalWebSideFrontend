@@ -20,7 +20,13 @@ function Contact() {
 	const [name, setName] = useState("");
 	const [text, setText] = useState("");
 	const [mail, setMail] = useState("");
-
+		//Create a toast
+		const notifySuccess = () => {
+			toast.success(`Mail has been sent.`, { duration: 2500 });
+		};
+		const notifyErr = () => {
+			toast.error(`An error occurred. Please try again later.`, { duration: 2500 });
+		};
 	const handleMailJS = (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
@@ -38,16 +44,41 @@ function Contact() {
 					setName("");
 					setText("");
 					setMail("");
+					notifySuccess()
 				},
 				function (error) {
 					console.log("FAILED...", error);
+					setName("");
+					setText("");
+					setMail("");
+					notifyErr()
 				}
 			);
 	};
-	//Create a toast
-	const notify = () => {
-		toast.success(`Mail has been sent.`, { duration: 2500 });
-	};
+
+	const handleButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+		if(name.length<= 0){
+			document.getElementsByClassName("text")[0].classList.add("errInput")
+			
+			return;
+		}else{
+			document.getElementsByClassName("text")[0].classList.remove("errInput")
+		}
+		if(mail.length<= 0){
+			document.getElementsByClassName("email")[0].classList.add("errInput")
+			return;
+		}else{
+			document.getElementsByClassName("email")[0].classList.remove("errInput")
+		}
+		if(text.length<= 0){
+			document.getElementsByClassName("message")[0].classList.add("errInput")
+			return;
+		}else{
+			document.getElementsByClassName("message")[0].classList.remove("errInput")
+		}
+		handleMailJS(e);
+
+	}
 
 	return (
 		<Div id='Contact'>
@@ -59,6 +90,7 @@ function Contact() {
 				<Container>
 					<Label>
 						<Input
+							className="text"
 							type='text'
 							name='user_name'
 							placeholder='Name...'
@@ -68,6 +100,7 @@ function Contact() {
 					</Label>
 					<Label>
 						<Input
+						className="email"
 							type='email'
 							name='user_email'
 							placeholder='Email...'
@@ -79,6 +112,7 @@ function Contact() {
 
 				<Label>
 					<Textarea
+					className="message"
 						name='message'
 						placeholder='How can I help you?'
 						value={text}
@@ -91,9 +125,9 @@ function Contact() {
 					onClick={(
 						e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 					) => {
-						handleMailJS(e);
-						notify();
-					}}>
+						e.preventDefault()
+						handleButton(e)
+						}}>
 					Send mail
 				</Button>
 			</Form>
