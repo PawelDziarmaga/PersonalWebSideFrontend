@@ -135,7 +135,7 @@ export const ProjectPage = styled(motion.div)`
 			cursor: pointer;
 			position: absolute;
 			top: 0;
-			right: 0;
+			right: 1vw;
 			margin: 1vw;
 			font-size: 4rem;
 			font-weight: bold;
@@ -214,20 +214,13 @@ export const ProjectPage = styled(motion.div)`
 			font-size: 1.5rem;
 			transition: 0.3s;
 			&:link {
-				color: #a7d2cb;
-				text-decoration: none;
-			}
-			&:visited {
-				color: #c98474;
-				text-decoration: none;
-			}
-			&:hover {
-				color: #874c62;
 				text-decoration: underline;
 			}
-			&:active {
-				color: #874c62;
+		
+			&:hover {
+				transform: scale(1.03);
 			}
+		
 		}
 
 		@media (max-width: 1000px) {

@@ -57,11 +57,8 @@ function Contact() {
 	};
 
 	const handleButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
-		console.log(name.length<= 0)
 		if(name.length<= 0){
-			
 			document.getElementsByClassName("textForm")[0].classList.add("errInput")
-			console.log(document.getElementsByClassName("textForm")[0].classList)
 			return;
 		}else{
 			document.getElementsByClassName("textForm")[0].classList.remove("errInput")
@@ -85,7 +82,7 @@ function Contact() {
 	return (
 		<Div id='Contact'>
 			<H1>
-				If you want to ask me about something, write to me!<br></br> I&apos;ll be happy to
+				If you want to ask me something, write to me!<br></br> I&apos;ll be happy to
 				answer you :)
 			</H1>
 			<Form id='contact-form'>

@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 body{
+    @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Caveat:wght@400;500;700&display=swap");
+
     margin: 0;
 	background: #f4f9f9;
     font-family: 'Baloo 2', cursive;
@@ -40,15 +42,10 @@ p{
 `;
 export const Div = styled.div`
 	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
+
 	overflow-y: scroll;
 	height: 100vh;
-	div {
-		scroll-snap-align: start;
-	}
-	&.noScroll {
-		overflow-y: hidden;
-	}
+
 `;
 /*
 font-family: 'Baloo 2', cursive;

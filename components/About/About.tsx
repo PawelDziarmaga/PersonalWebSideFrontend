@@ -44,7 +44,7 @@ function About() {
 					alt=''
 				/>
 				<p>
-				But traffic engineering isn&apos;t the only thing I like to do. I&apos;m passionate about world of information technology. I love to design and build, that is why I create websites.
+				But traffic engineering isn&apos;t the only thing I like to do. I&apos;m passionate about the world of information technology. I love to design and build, which is why I create websites.
 				</p>
 			</ParagraphBoxTwo>
 

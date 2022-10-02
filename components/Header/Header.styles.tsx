@@ -16,7 +16,7 @@ export const H1 = styled.h1`
 	text-align: center;
 	font-size: 3vw;
 	color: #252525;
-	font-family: "Peralta", cursive;
+	font-family: 'Baloo 2', cursive;
 	text-shadow: 0px 0px 15px #ecdbba;
 	@media (max-width: 1000px) {
 		font-size: 4vw;
