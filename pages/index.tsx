@@ -11,11 +11,20 @@ import Projects from "../components/Projects/Projects";
 import StickyNotes from "../components/StickyNotes/StickyNotes";
 import Contact from "../components/Contact/Contact";
 import Nav from "../components/Nav/Nav";
-
+import Loader from "../components/Loader/Loader";
 //import styles
 import { Div } from "../styles/global.style";
+//import data from strapi
+import { useQuery } from "urql";
+import { ABOUT } from "../lib/query";
 
 const Home: NextPage = () => {
+			//Fetch result from strapi
+			const [result] = useQuery({ query: ABOUT });
+			const {  fetching, error } = result;
+			if (fetching) return <Loader/>;
+			if (error) return <p>Oh no... </p>;
+	
 	return (
 		<div>
 			<Head>
