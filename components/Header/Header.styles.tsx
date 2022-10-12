@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-
+import { motion } from "framer-motion";
 export const Div = styled.div`
 	overflow: hidden;
 
@@ -155,7 +155,7 @@ interface PropsType {
 	readonly animation: string;
 }
 
-export const BackgroundIMG = styled.div.attrs<PropsType, PropsType>(
+export const BackgroundIMG = styled(motion.div).attrs<PropsType, PropsType>(
 	(props) => ({
 		zIndex: props.zIndex || 0,
 		top: props.top || "auto",

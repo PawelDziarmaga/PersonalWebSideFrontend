@@ -1,23 +1,31 @@
+
 import React from "react";
 // import styles
-import { Div} from "./Loader.styles";
-
+import { Div, Circles,Shadows, Circle , Shadow} from "./Loader.styles";
+//framermotion - animation
+import {  AnimatePresence } from "framer-motion"
 function Loader() {
-
-
-
 	return (
-		<Div>
-			<div className="wrapper">
-				<div className="circle"></div>
-				<div className="circle"></div>
-				<div className="circle"></div>
-				<div className="shadow"></div>
-				<div className="shadow"></div>
-				<div className="shadow"></div>
-				<span>Loading</span>
-			</div>
+		<AnimatePresence>
+			<Div 	
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+			>
+				<Circles>
+					<Circle/>
+					<Circle/>
+					<Circle/>
+				</Circles>
+				<Shadows>
+					<Shadow/>
+					<Shadow/>
+					<Shadow/>
+				</Shadows>
+				<p>Loading...</p>
+		
 		</Div>
+		</AnimatePresence>
 	);
 }
 

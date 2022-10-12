@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 export const Div = styled.div<{ opa: boolean }>`
 	z-index: 5;
 	background-color: ${(props) => (props.opa ? "#eeec" : "#eee1")};
@@ -45,7 +45,7 @@ export const Ul = styled.ul`
 		width: 100%;
 	}
 `;
-export const Li = styled.li`
+export const Li = styled(motion.li)`
 	list-style: none;
 	a {
 		background-color: #ffffff66;

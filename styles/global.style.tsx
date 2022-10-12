@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-
+import { motion } from "framer-motion";
 export const GlobalStyle = createGlobalStyle`
 *{
   margin: 0;
@@ -40,7 +40,7 @@ p{
 	}
     }
 `;
-export const Div = styled.div`
+export const Div = styled(motion.div)`
 	scroll-behavior: smooth;
 
 	overflow-y: scroll;

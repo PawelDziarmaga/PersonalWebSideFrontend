@@ -21,6 +21,10 @@ function Header() {
 			/>
 			<BackgroundIMG zIndex={-1} imgUrl={"none"} animation={"night"} />
 			<BackgroundIMG
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.4 }}
+
 				imgUrl={elements.sun.data.attributes.formats.thumbnail.url}
 				zIndex={-5}
 				top={"10vh"}
@@ -30,16 +34,28 @@ function Header() {
 				animation={"sunTravel"}
 			/>
 			<BackgroundIMG
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.1 }}
+
 				imgUrl={elements.mn3.data.attributes.formats.large.url}
 				zIndex={-2}
 				height={"160%"}
 			/>
 			<BackgroundIMG
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.2 }}
+
 				imgUrl={elements.mn2.data.attributes.formats.large.url}
 				zIndex={-3}
 				height={"140%"}
 			/>
 			<BackgroundIMG
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.3 }}
+
 				imgUrl={elements.mn1.data.attributes.formats.large.url}
 				zIndex={-4}
 				height={"140%"}

@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 			const {  fetching, error } = result;
 			if (fetching) return <Loader/>;
 			if (error) return <p>Oh no... </p>;
-	
+			
 	return (
 		<div>
 			<Head>
@@ -49,7 +49,10 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Provider store={store}>
-				<Div className='App'>
+				<Div initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className='App'>
 					<Nav />
 					<Header />
 					<About />
