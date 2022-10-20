@@ -1,80 +1,37 @@
 import React from "react";
 // import hooks
 import Link from "next/link";
-import { useState } from "react";
 // import styles
 import { Div, Ul, Li } from "./Nav.styles";
 
 function Nav() {
-	const [opa, useOpa] = useState(false);
 
-	const opaHendler = () => {
-		useOpa((prev) => !prev);
-	};
+	const navList= [
+		{name:"home", href: "#Header"}, 
+		{name:"About", href: "#About"},
+		{name:"Projects", href: "#Projects"}, 
+		{name:"Notes", href: "#Comment"},
+		{name:"Contact", href: "#Contact"}]
+
+	const elements = navList.map(el =>{
+		return(
+			<Li 
+				key={el.name}
+				initial={{ y: -30 }}
+				animate={{ y: 0 }}
+				transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+
+				>
+				<Link href={el.href}>{el.name}</Link>
+			</Li>
+		)
+	})
+
+
 	return (
-		<Div onScroll={() => opaHendler()} opa={opa}>
+		<Div>
 			<Ul>
-				<Li 
-					initial={{ y: -30 }}
-					animate={{ y: 0 }}
-					transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
-
-					whileHover={{
-						scale: 1.1,
-						transition: { duration: 0.2 },
-					}}
-					>
-					<Link href='#Header'>Home</Link>
-				</Li>
-
-				<Li
-					initial={{ y: -30 }}
-					animate={{ y: 0 }}
-					transition={{ type: "spring", stiffness: 100, delay: 0.2}}
-
-					whileHover={{
-						scale: 1.1,
-						transition: { duration: 0.2 },
-					}}
-					>
-					<Link href='#About'>About</Link>
-				</Li>
-				<Li
-					initial={{ y: -30 }}
-					animate={{ y: 0 }}
-					transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
-
-					whileHover={{
-						scale: 1.1,
-						transition: { duration: 0.2 },
-					}}
-				>
-					<Link href='#Projects'>Projects</Link>
-				</Li>
-				<Li
-					initial={{ y: -30 }}
-					animate={{ y: 0 }}
-					transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
-
-					whileHover={{
-						scale: 1.1,
-						transition: { duration: 0.2 },
-					}}
-				>
-					<Link href='#Comment'>Notes</Link>
-				</Li>
-				<Li
-					initial={{ y: -30 }}
-					animate={{ y: 0 }}
-					transition={{ type: "spring", stiffness: 100, delay: 0.5 }}
-
-					whileHover={{
-						scale: 1.1,
-						transition: { duration: 0.2 },
-					}}
-				>
-					<Link href='#Contact'>Contact</Link>
-				</Li>
+				{elements}
 			</Ul>
 		</Div>
 	);

@@ -4,15 +4,18 @@ export const Div = styled.div`
 	height: 100vh;
 	padding: 0 20%;
 	background-color: #fefbf6;
-	border-bottom: 5px solid black;
+
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	color: #4d4d4d;
-
+	color: var(--fontColor);
+	font-weight: 500;
+	
+	box-shadow: 0 0px 3vh black;
+	
 	@media (max-width: 1300px) {
 		padding: 0 10%;
 	}
@@ -26,15 +29,15 @@ export const HeaderBox = styled.div`
 	justify-content: space-around;
 
 	img {
-		height: 25vh;
+		height: 20vh;
 	}
 	h2 {
-		color: #3d3c42;
+		text-align: center;
 		font-size: 2.5rem;
 	}
 	@media (max-width: 1000px) {
 		img {
-			height: 20vh;
+			height: 15vh;
 		}
 	}
 	@media (max-width: 600px) {
@@ -42,7 +45,6 @@ export const HeaderBox = styled.div`
 		display: block;
 		h2 {
 			font-size: 2rem;
-			text-align: right;
 			width: 80vw;
 		}
 	}
@@ -51,13 +53,13 @@ export const HeaderBox = styled.div`
 export const ParagraphBoxOne = styled.div`
 	display: flex;
 	align-items: center;
+
 	img {
 		height: 20vh;
 	}
 	p {
-		color: #3d3c42;
 		font-size: 2rem;
-	}
+		}
 	@media (max-width: 1000px) {
 		img {
 			height: 15vh;
@@ -83,6 +85,12 @@ export const ParagraphBoxOne = styled.div`
 export const ParagraphBoxTwo = styled.div`
 	display: flex;
 	align-items: center;
+
+	padding: 1rem;
+	box-shadow: 0 0 3px var(--fontColor);
+    border-radius: 2rem;
+
+	margin-bottom: 5vh;
 	img {
 		height: 25vh;
 	}

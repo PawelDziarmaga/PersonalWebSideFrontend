@@ -10,6 +10,8 @@ export const Div = styled.div<{ img: string }>`
 	background-size: cover;
 	background-position: top;
 	background-repeat: no-repeat;
+
+	border-right: 2px solid var(--fontColor);
 `;
 
 export const H1 = styled.h1`

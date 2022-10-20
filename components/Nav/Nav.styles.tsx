@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-export const Div = styled.div<{ opa: boolean }>`
+export const Div = styled.div`
 	z-index: 5;
-	background-color: ${(props) => (props.opa ? "#eeec" : "#eee1")};
-	box-shadow: 0 0 ${(props) => (props.opa ? "15px" : "0")} grey;
+
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -34,7 +33,7 @@ export const Ul = styled.ul`
 	justify-content: space-around;
 	align-content: center;
 	width: 50%;
-	padding: 0;
+	
 	@media (max-width: 1000px) {
 		width: 70%;
 	}
@@ -47,28 +46,28 @@ export const Ul = styled.ul`
 `;
 export const Li = styled(motion.li)`
 	list-style: none;
-	a {
-		background-color: #ffffff66;
-		text-decoration: none;
+	a {	
 		text-align: center;
-		font-size: 1vw;
-		color: #252525;
+		font-size: 2vw;
+		color: var(--fontColor);
 
-		text-shadow: 0px 0px 15px #ecdbba;
+		text-transform: lowercase;
+		font-weight: bold;
 
-		border: 1px solid #252525;
-		padding: 10px;
-		box-shadow: 2px 2px 5px #252525;
-
-		transition: 0.3s;
+		border-bottom: 1px solid var(--fontColor);
+		transition: .2s;
+		&:hover{
+			color: #575757;
+			border-bottom: 4px solid #575757;
+		}
 		@media (max-width: 1000px) {
-			font-size: 2vw;
+			font-size: 3vw;
 		}
 		@media (max-width: 600px) {
-			font-size: 2.5vw;
+			font-size: 3.5vw;
 		}
 		@media (max-width: 400px) {
-			font-size: 3vw;
+			font-size: 4vw;
 			padding: 2vw;
 		}
 	}

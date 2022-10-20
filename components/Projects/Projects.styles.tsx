@@ -2,15 +2,15 @@ import styled from "styled-components";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { motion } = require("framer-motion");
 export const Container = styled.div`
-	background-color: #c98474;
-	padding: 10vh 10%;
+	background-color: #d9ceb5;
+	
 	height: 100vh;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
 	padding: 10vh 5%;
-
+	box-shadow: 0 0px 3vh black;
 	@media (max-width: 1200px) {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
@@ -23,7 +23,6 @@ export const Container = styled.div`
 	}
 `;
 export const Element = styled.div`
-	box-shadow: 0px 0px 20px #874c62;
 
 	cursor: pointer;
 	position: relative;
@@ -54,14 +53,11 @@ export const Element = styled.div`
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-
-		background-color: #f2d28854;
+		background-color: #ffffffaa;
 	}
 	p {
 		z-index: 2;
 		text-align: center;
-		background-color: #f2d28862;
-		box-shadow: 0 0 40px #f2d288;
 
 		position: absolute;
 		top: 50%;
@@ -69,8 +65,8 @@ export const Element = styled.div`
 		transform: translate(-50%, -50%);
 
 		font-size: 3rem;
-		font-weight: bold;
-		color: #333e3b;
+		font-weight: bolder;
+		color: var(--fontColor);
 
 		text-transform: uppercase;
 		@media (max-width: 1400px) {
@@ -99,25 +95,22 @@ export const ProjectPage = styled(motion.div)`
 	z-index: 5;
 	color: black;
 	.container {
-		background-color: #f2d388;
-		box-shadow: 0 0 10px #000000;
-		margin: 5vh 10vw;
-
+		background-color: #FEFBF3;
+		
+		height: 100vh;
+		width: 100vw;
 		display: grid;
-		grid-template-columns: [first] 27.5vw [line2] 47.5vw [end];
+		grid-template-columns: [first] 45vw [line2] 45vw [end];
 		grid-template-rows: [row1-start] 8vh [row1-end row2-start] 24vh [row2-end row3-start] 23vh [row3-end row4-start] 27vh [row4-end];
-		column-gap: 5vw;
+		column-gap: 10vw;
 		row-gap: 2vh;
 
-		@media (max-width: 1000px) {
-			grid-template-columns: [first] 32.5vw [line2] 43.5vw [end];
-		}
 		@media (max-width: 800px) {
 			grid-template-rows: [row1-start] 5vh [row1-end row2-start] 20vh [row2-end row3-start] 15vh [row3-end row4-start] 22vh [row4-end row5-start] 23vh [row5-end];
 			row-gap: 1vh;
 		}
 		@media (max-width: 650px) {
-			margin: 2vh 10vw;
+		
 			grid-template-rows: [row1-start] 5vh [row1-end row2-start] 20vh [row2-end row3-start] 15vh [row3-end row4-start] 29vh [row4-end row5-start] 23vh [row5-end end];
 			row-gap: 1vh;
 		}
@@ -134,12 +127,12 @@ export const ProjectPage = styled(motion.div)`
 		span {
 			cursor: pointer;
 			position: absolute;
-			top: 0;
-			right: 1vw;
-			margin: 1vw;
+			top: -0.5rem;
+			right: 1rem;
+			
 			font-size: 4rem;
 			font-weight: bold;
-			color: #874c62;
+			color: var(--fontColor);
 			transition: 0.3s;
 			&:hover {
 				transform: scale(1.5);
@@ -148,7 +141,13 @@ export const ProjectPage = styled(motion.div)`
 		h1 {
 			font-size: 4rem;
 			text-align: center;
-			color: #874c62;
+			
+			color: var(--fontColor);
+
+			background-color: #FEFBF3;
+			box-shadow: 0 0 3px var(--fontColor);
+    		
+			
 		}
 		@media (max-width: 1000px) {
 			span {
@@ -179,17 +178,16 @@ export const ProjectPage = styled(motion.div)`
 		justify-self: right;
 		img {
 			height: 24vh;
-			box-shadow: 0 0 10px #874c62;
+			box-shadow: 0 0 10px var(--fontColor);
 			transition: 0.1s;
 			cursor: pointer;
 			&:hover {
-				box-shadow: 0 0 5px #874c62;
+				box-shadow: 0 0 5px var(--fontColor);
 			}
 		}
 		@media (max-width: 1300px) {
 			padding-left: 1vw;
-			img {
-			}
+			
 		}
 		@media (max-width: 800px) {
 			padding-left: 0;
@@ -220,6 +218,9 @@ export const ProjectPage = styled(motion.div)`
 			&:hover {
 				transform: scale(1.03);
 			}
+			&:visited {
+				color: var(--fontColor);
+			}
 		
 		}
 
@@ -249,7 +250,9 @@ export const ProjectPage = styled(motion.div)`
 	}
 	.item-4 {
 		grid-column: 1 / span 2;
-
+		box-shadow: 0 0 3px var(--fontColor);
+    	border-radius: 2rem;
+		margin: 5px;
 		p {
 			padding: 1vh 15vw;
 			text-align: justify;
@@ -278,13 +281,20 @@ export const ProjectPage = styled(motion.div)`
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
+		div{
+			background-color: #FEFBF3;
+			box-shadow: 0 0 3px var(--fontColor);
+    		border-radius: 2rem;
+			padding: 1rem;
+		}
 		h2 {
-			color: #874c62;
+			color: var(--fontColor);
 			font-size: 2rem;
 		}
 		ul {
 			list-style: none;
 			font-size: 1rem;
+
 		}
 
 		@media (max-width: 1000px) {

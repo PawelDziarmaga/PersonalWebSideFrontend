@@ -14,19 +14,19 @@ import {
 function About() {
 	//Fetch result from strapi
 	const [result] = useQuery({ query: ABOUT });
-	const { data, fetching, error } = result;
+	const { data, fetching } = result;
 	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... </p>;
 	const elements = data.about.data.attributes;
 
 	return (
 		<Div id='About'>
 			<HeaderBox>
+			<h2>My name is Paweł!</h2>
 				<img
 					src={elements.Hi.data.attributes.formats.small.url}
 					alt=''
 				/>
-				<h2>My name is Paweł!</h2>
+				
 			</HeaderBox>
 			<ParagraphBoxOne>
 				<p>

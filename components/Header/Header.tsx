@@ -8,9 +8,8 @@ import { Div, H1, H2, Line, Layout, BackgroundIMG } from "./Header.styles";
 function Header() {
 	//Fetch result from strapi
 	const [result] = useQuery({ query: HEADER });
-	const { data, fetching, error } = result;
+	const { data, fetching } = result;
 	if (fetching) return <Div>Loading...</Div>;
-	if (error) return <Div>Oh no... </Div>;
 	const elements = data.header.data.attributes;
 
 	return (

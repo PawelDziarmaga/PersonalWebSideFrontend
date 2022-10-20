@@ -2,17 +2,15 @@ import styled from "styled-components";
 
 export const Div = styled.div<{ hide: boolean }>`
 	position: relative;
-
 	height: 100vh;
-	background-color: white;
-	border-bottom: 5px solid black;
-
 	display: grid;
 	grid-template-columns: ${(props) => (props.hide ? "20% 80%" : "0% 100%")};
 	justify-content: center;
 	align-items: center;
 
 	overflow: hidden;
+
+	box-shadow: 0 0px 3vh black;
 
 	@media (max-width: 800px) {
 		grid-template-columns: ${(props) =>

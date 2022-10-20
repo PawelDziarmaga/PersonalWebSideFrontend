@@ -12,20 +12,12 @@ body{
     margin: 0;
 	background: #f4f9f9;
     font-family: 'Baloo 2', cursive;
-
+    --fontColor: #252525;
     --secondary: #5590c8;
 
 }
-h2{
-    font-size: 1.2 rem;
-    color: var(--primary)
-}
-h2{
-    font-size: 1 rem;
-    color: var(--secondary)
-}
+
 a{
-    color: black;
     text-decoration: none;
 }
 p{

@@ -41,13 +41,12 @@ function ChoosenProject(props: {
 	return (
 		<ProjectPage
 			onClick={() => props.setActive(false)}
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{
-				delay: 0,
-				duration: 0.5,
-			}}>
+			initial={{ x: -2000 }}
+			animate={{ x: 0 }}
+			exit={{ x: -2000 }}
+			transition={{ type: "tween", stiffness: 300, delay: 0.2 }}
+			>
+		
 			<div
 				className='container'
 				onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>

@@ -20,11 +20,11 @@ function StickyNotes() {
 	let notesSlice = useSelector((state: RootState) => state.notesSlice);
 	//Fetch result from strapi
 	const [result] = useQuery({ query: NOTE_PAGE });
-	const { data, fetching, error } = result;
+	const { data, fetching} = result;
 	if (fetching) return <Div hide={hide} id='Comment'></Div>;
-	if (error) return <p>Oh no... </p>;
+	console.log(data.notePage.data.attributes.Board.data.attributes.formats)
 	const boardURL =
-		data.notePage.data.attributes.Board.data.attributes.formats.small.url;
+		data.notePage.data.attributes.Board.data.attributes.formats.medium.url;
 	//Create elements
 	const notesLenght = notesSlice.length;
 	if (notesLenght > 20) {

@@ -35,7 +35,7 @@ const shadow = keyframes`
 
 `
 export const Div = styled(motion.div)`
-    background:radial-gradient(#6db1cd, #bde8fa);
+    background:radial-gradient(#fffbde, #fbf9f0);
     width: 100%;
     height: 100vh;
     padding-top: 20vh;
@@ -44,7 +44,7 @@ export const Div = styled(motion.div)`
         text-align:center ;
         font-size: 10vw;
         letter-spacing: 1vw;
-        color: #fff;
+        color: var(--fontColor);
         
 }
     

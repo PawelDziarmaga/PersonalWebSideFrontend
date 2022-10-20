@@ -35,6 +35,7 @@ function Projects() {
 	));
 	return (
 		<Container id='Projects'>
+			
 			{projectsComponents}
 			<AnimatePresence>
 				{acive ? (
